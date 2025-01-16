@@ -8,14 +8,47 @@
 
 
 class Vehicle {
-  // YOUR CODE HERE
+  #make;
+  #model;
+  #year;
+ 
+constructor(make, model, year){
+  this.#make = make;
+  this.#model = model;
+  this.#year = year;
+}
+
+  getInfo(){
+    return `Make: ${this.#make}, Model: ${this.#model}, Year: ${this.#year}`;
+  }
+  get make(){
+    return this.#make;
+  }
+  get model(){
+    return this.#model;
+  }
+
+  get year(){
+    return this.#year;
+  }
+
 }
 
 class Car extends Vehicle {
-  // YOUR CODE HERE
+#doors;
+constructor(make, model, year, doors){
+super(make,model,year )
+  this.#doors = doors}
+  
+
+getInfo(){
+  return ` ${this.year}, ${this.make}, ${this.model}, with ${this.doors} doors`;
 }
 
-
+get doors(){
+  return this.#doors;
+}
+}
 // Test Code / Driver Code
 const myCar = new Car("Toyota", "Corolla", 2021, 4);
 console.log(myCar.getInfo());  // Expected Output: "2021 Toyota Corolla with 4 doors"
